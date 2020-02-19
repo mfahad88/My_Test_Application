@@ -29,19 +29,26 @@
             android:onClick="openWebview"
             />
         <Button android:text="@string/button_2"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_3"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_4"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_5"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_6"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_7"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
         <Button android:text="@string/button_8"
-            android:layout_margin="20dp"/>
+            android:layout_margin="20dp"
+            android:onClick="openWebview"/>
 
     </GridLayout>
 
