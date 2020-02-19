@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
@@ -16,6 +20,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 public class MainActivity extends AppCompatActivity {
     GridLayout gridLayout;
     public static final String URL="";
+    InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +33,40 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, ""+initializationStatus.toString(), Toast.LENGTH_SHORT).show();
             }
         });
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Toast.makeText(MainActivity.this, "onAdLoaded()", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Toast.makeText(MainActivity.this,
+                        "onAdFailedToLoad() with error code: " + errorCode,
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdClosed() {
+
+            }
+        });
+        if (mInterstitialAd != null && mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();
+        }
+
+
+        /*mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }*/
+
 
     }
 

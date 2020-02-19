@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8436847234123026~3547534949"/>
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+        <!--<meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8436847234123026~3547534949"/>-->
         <activity android:name=".WebClientActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
