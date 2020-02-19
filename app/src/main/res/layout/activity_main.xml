@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logo"
+        android:textSize="28sp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt_logo"/>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_logo"
+        android:layout_centerHorizontal="true"
+        android:useDefaultMargins="false"
+        android:id="@+id/gridLayout"
+        android:columnCount="2">
+
+        <Button android:text="@string/button_1"
+            android:layout_margin="20dp"
+            android:onClick="openWebview"
+            />
+        <Button android:text="@string/button_2"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_3"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_4"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_5"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_6"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_7"
+            android:layout_margin="20dp"/>
+        <Button android:text="@string/button_8"
+            android:layout_margin="20dp"/>
+
+    </GridLayout>
+
+
+
+
+</RelativeLayout>
