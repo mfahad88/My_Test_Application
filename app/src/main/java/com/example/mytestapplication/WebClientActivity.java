@@ -21,13 +21,16 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class WebClientActivity extends AppCompatActivity {
     ProgressBar progressBar;
     WebView webView;
     String url;
     LinearLayout linearHeader;
     String title;
-
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +79,17 @@ public class WebClientActivity extends AppCompatActivity {
             }
         });
 
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
     private void initViews() {
         progressBar=findViewById(R.id.progressBar);
         webView=findViewById(R.id.webView);
         linearHeader=findViewById(R.id.linearHeader);
+        mAdView = findViewById(R.id.adView);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
